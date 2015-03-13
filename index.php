@@ -7,12 +7,12 @@
 </head>
 
 <body>
+<div id="container">
 <div id="header">
     <h1>Academic Relation Search</h1>
 </div>
 <div id="about">
-    <p><b>
-    <br>
+    <b>
     <p>
     This search system aims to capture essential interconnections
     among different academic fields. </p>
@@ -21,7 +21,7 @@
     what you may be interested in, what you may study in the future
     and how your academic knowledge can be applied in real world.<br></p>
     <a href="about_this.html">-> Read more about this system<br><br></a>
-    </b></p>
+    </b>
 </div>
 <div id="search">
     <form action="get_info.php" method="post">
@@ -30,6 +30,11 @@
     <br>
     <input type="submit" value="search" class="btn">
     </form>
+</div>
+<div id="footer">
+   <p>This system has been developed as a part of the Creative Engineering Project <br>
+"The Cloud Computing / Big Data Analytics Project", Dept. of Engineering, University of Tokyo. </p> 
+</div>
 </div>
 </body>
 </html>

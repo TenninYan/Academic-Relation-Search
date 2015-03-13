@@ -19,6 +19,7 @@ $contents=file_get_contents($url);
 </head>
 
 <body>
+<div id="container">
 <div id="header">
     <h1>Academic Relation Search<br></h1>
 </div>
@@ -31,11 +32,10 @@ $contents=file_get_contents($url);
 <!-- <div id="mid"> -->
     <?php
     if (!(empty($temp_search_word))){
-    print "<h4>";
-
+    print "<h3>";
     print "Searched: ";
     print ($temp_search_word);
-    print "</h4>";
+    print "</h3>";
     // print "</div>";
     // echo "<hr>";
     
@@ -58,7 +58,9 @@ $contents=file_get_contents($url);
     
     system ('java Main'.$solr_number,$retval);
     if ($retval !== 0){
+        print "<h3>";
         print ("Search Failed");
+        print "</h3>";
     }
     
     $file_name = "output.csv";
@@ -124,9 +126,9 @@ foreach ($csv as $row){
         print"<div class='mit_data'>";
         print"<span class='photo-right'><img src='$row[5]' height='200px'></span>";
         // print "Department: $row[3] <br>";
-        print "<h3><b>";
+        print "<h4><b>";
         print "$row[0] <br>";
-        print "</b></h3>";
+        print "</b></h4>";
         print "Class name: ";
         print "<a href='$row[4]'>";
         print "$row[1]<br>";
@@ -156,39 +158,15 @@ print "</div>";
 print"</ul>";
 print'</div>';
 
-// var_dump($department_list);
-// print'<div id="sidebar">';
-// print'<div float="left">';
-// print'<ul id="tabs">';
-// for ($i=1;$i<=$department_number;$i++){
-//     print"<li><a href='#box$i'>$department_list($i)</a></li>";
-// }
-// print'</ul>';
-// print'</div>';
-// print'</div>';
 }
 ?>
 
-<br>
-<br>
-<br>
 
-
+<div id="footer_sub">
+   <p>This system has been developed as a part of the Creative Engineering Project <br>
+"The Cloud Computing / Big Data Analytics Project", Dept. of Engineering, University of Tokyo. </p> 
 </div>
-<!-- <div class="box"> -->
-<!-- <div id="box1"> -->
-<!--     box1 -->
-<!-- </div> -->
-
-<!-- <div id="box2"> -->
-<!--     box2 -->
-<!-- </div> -->
-<!--  -->
-<!-- <div id="box3"> -->
-<!--     box3 -->
-<!-- </div> -->
-<!--  -->
-<!-- </div> -->
+</div>
 
 <script type="text/javascript">
     window.onload = function() {
@@ -203,5 +181,6 @@ print'</div>';
 <br>
 
 
+</div>
 </body>
 </html>
